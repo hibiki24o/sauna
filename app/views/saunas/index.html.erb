@@ -32,13 +32,35 @@
       <div class="saunas">
         <h3 class="heading-name">みんなのサウナ広場</h3>
           <% @saunas.each do |sauna| %>
-            <div class="sauna-card">
-              <h4><%= sauna.title %></h4>
-              <p><%= sauna.prefecture_id %></p>
-              <p><%= sauna.price %></p>
-            </div>
-          <% end %>
+      <li class='list'>
+        <%= link_to "sauna_path"("sauna.id") do %>
+        <div class='item-img-content'>
+          <%= image_tag "sauna.image" , class: "item-img" %>
+
         </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "sauna.title" %>
+          </h3>
+          <div class='item-price'>
+            <span><%= product.price %>円</span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+
+
+
+
+
+
+
+
 
     <footer>
       <a href="#" class="post-link">
