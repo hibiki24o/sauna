@@ -1,0 +1,2 @@
+class Mysauna < ApplicationRecord
+end
