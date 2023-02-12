@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>SAUNA</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 class="title">SAUNA</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li>新規登録</li>
+          <li>ログイン</li>
+          <li>ログアウト</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="contents">
+      <div class="first-view">
+        <img src="./images/sauna_tp.jpg" alt="">
+        <h2 class="first-view-title">men's sauna for men</h2>
+        <!-- 『トップ画像』を表示する -->
+      </div>
+ 
+        <!-- 『新着サウナ情報』を表示する -->
+      <div class="saunas">
+        <h3 class="heading-name">みんなのサウナ広場</h3>
+          <% @saunas.each do |sauna| %>
+            <div class="sauna-card">
+              <h4><%= sauna.title %></h4>
+              <p><%= sauna.prefecture_id %></p>
+              <p><%= sauna.price %></p>
+            </div>
+          <% end %>
+        </div>
+
+    <footer>
+      <a href="#" class="post-link">
+        <div class="post-link-img">
+         <img src="./images/icon_camera-.png" width="54" height="50">
+        </div>
+        <p class="post-link-text">投稿する</p>
+      </a>
+      <p>Copyright(C) sauna ALL RIGHTS RESERVED.</p>
+    </footer>
+  </body>
+</html>

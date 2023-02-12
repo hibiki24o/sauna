@@ -7,7 +7,7 @@ Sauna
 
 
 # URL
-
+https://sauna-iq3q.onrender.com
 
 
 # テスト用アカウント
@@ -41,8 +41,8 @@ Sauna
 要件を定義したシート(https://docs.google.com/spreadsheets/d/12h1g3SaSDE_81k45Du4tPUm7QFNdOAOTEBuEgeoBBWE/edit#gid=1785908763)
 
 
-# 実装した機能についての画像やGIFおよびその説明
-〜実装した機能や画像や説明〜
+# 実装した機能についてのGIF
+https://gyazo.com/265f8ae2a2333ab5e38385e44f901cdb
 
 
 # 実装予定の機能
@@ -76,9 +76,9 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 # ローカルでの動作方法
 以下のコマンドを順に実行。
 
-% git clone https://github.com/hibiki24o/mysauna
+% git clone https://github.com/hibiki24o/sauna
 
-% cd mysauna
+% cd sauna
 
 % bundle install
 
