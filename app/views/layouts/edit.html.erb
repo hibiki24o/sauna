@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>SAUNA</title>
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <h1 class="title">SAUNA</h1>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li>新規登録</li>
+          <li>ログイン</li>
+          <li>ログアウト</li>
+        </ul>
+      </div>
+    </header>
+
+    <%= form_with model: @post, url: post_path(@post), method: :patch do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+  <div>
+    <%= form.label :prefecture_id %>
+    <%= form.number_field :prefecture_id %>
+  </div>
+  <div>
+    <%= form.label :customer_id %>
+    <%= form.number_field :customer_id %>
+  </div>
+  <div>
+    <%= form.label :star_id %>
+    <%= form.number_field :star_id %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+  <div>
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
