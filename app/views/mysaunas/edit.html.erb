@@ -21,36 +21,37 @@
       </div>
     </header>
 
-    <%= form_with model: @post, url: post_path(@post), method: :patch do |form| %>
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-  <div>
-    <%= form.label :prefecture_id %>
-    <%= form.number_field :prefecture_id %>
-  </div>
-  <div>
-    <%= form.label :customer_id %>
-    <%= form.number_field :customer_id %>
-  </div>
-  <div>
-    <%= form.label :star_id %>
-    <%= form.number_field :star_id %>
-  </div>
-  <div>
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-  <div>
-    <%= form.label :review %>
-    <%= form.text_area :review %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+        <h2 class="items-sell-title">投稿の編集を入力</h2>
+        <%= form_with(model: @saunas, local: true) do |form| %>
+        <div>
+          <%= form.label :title %>
+          <%= form.text_field :title, placeholder: "店名" %>
+        </div>
+        <div>
+          <%= form.label :address %>
+          <%= form.text_field :address, placeholder: "住所" %>
+        </div>
+        <div>
+          <%= form.label :prefecture_id %>
+          <%= form.number_field :prefecture_id %>
+        </div>
+        <div>
+          <%= form.label :customer_id %>
+          <%= form.number_field :customer_id %>
+        </div>
+        <div>
+          <%= form.label :star_id %>
+          <%= form.number_field :star_id %>
+        </div>
+        <div>
+          <%= form.label :price %>
+          <%= form.number_field :price , placeholder: "価格" %>
+        </div>
+        <div>
+          <%= form.label :review %>
+          <%= form.text_area :review, placeholder: "レビュー" %>
+        </div>
+        <div>
+          <%= form.submit "SEND" %>
+        </div>
+      <% end %>
