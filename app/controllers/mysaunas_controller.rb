@@ -14,8 +14,12 @@ class MysaunasController < ApplicationController
   end
 
   def destroy
-    sauna = Mysauna.find(params[:id])
-    sauna.destroy
+    @sauna = Mysauna.find(params[:id])
+    @sauna.destroy
+  end
+
+  def show
+    @sauna = Mysauna.find(params[:id])
   end
 
   private
