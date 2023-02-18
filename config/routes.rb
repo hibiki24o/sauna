@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to:"mysaunas#index"
-  resources :mysaunas, only: [:index, :new]
+  resources :mysaunas, only: [:index, :new, :create]
 end
