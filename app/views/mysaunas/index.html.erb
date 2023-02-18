@@ -1,5 +1,3 @@
-<!DOCTYPE HTML>
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -23,31 +21,31 @@
 
     <div class="contents">
       <div class="first-view">
-        <img src="./images/sauna_tp.jpg" alt="">
+        <%# <img src="./images/sauna_tp.jpg" alt=""> %>
+        <img src="/assets/sauna_tp.jpg" alt="">
         <h2 class="first-view-title">men's sauna for men</h2>
         <!-- 『トップ画像』を表示する -->
       </div>
  
         <!-- 『新着サウナ情報』を表示する -->
-      <div class="saunas">
+    <ul class='item-lists'>
         <h3 class="heading-name">みんなのサウナ広場</h3>
-          <% @saunas.each do |sauna| %>
-            <div class="sauna-card">
-              <h4><%= sauna.title %></h4>
-              <p><%= sauna.prefecture_id %></p>
-              <p><%= sauna.price %></p>
-            </div>
-          <% end %>
+          <%# @saunas.each do |sauna| %>
+           <li class='list'>
+           <%#= link_to "sauna_path"("sauna.id") do %>
+           <div class='item-img-content'>
+           <%#= image_tag "sauna.image" , class: "item-img" %>
+         </div>
+         <div class='item-info'>
+           <h3 class='item-name'>
+            <%#= "sauna.title" %>
+           </h3>
+          <div class='item-prefecture'>
+            <%#= "sauna.prefecture_id" %>
+          </div>
+          <div class='item-star'>
+            <%#= "sauna.star_id" %>
+          </div>
         </div>
-
-    <footer>
-      <a href="#" class="post-link">
-        <div class="post-link-img">
-         <img src="./images/icon_camera-.png" width="54" height="50">
-        </div>
-        <p class="post-link-text">投稿する</p>
-      </a>
-      <p>Copyright(C) sauna ALL RIGHTS RESERVED.</p>
-    </footer>
-  </body>
-</html>
+          <%# end %>
+        <%# end %>
