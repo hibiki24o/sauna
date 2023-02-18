@@ -1,5 +1,5 @@
 class SaunasController < ApplicationController
   def index
-    @saunas = Tweet.all
+    #@saunas = Sauna.all
   end
 end

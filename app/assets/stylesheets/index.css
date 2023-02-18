@@ -1,0 +1,58 @@
+/* 新着サウナ情報 */
+
+.heading-name {
+  text-align: center;
+}
+
+.sauna-card {
+  display: inline-block;
+  width: 30%;
+  margin: 1% 3%;
+  text-align: center;
+}
+
+/* 商品一覧 */
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name {
+  font-size: 2.5vh;
+}
+
+.item-prefecture {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-star {
+  font-size: 1.5vh;
+}
