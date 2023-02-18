@@ -13,6 +13,11 @@ class MysaunasController < ApplicationController
     Mysauna.create(mysauna_params)
   end
 
+  def destroy
+    sauna = Mysauna.find(params[:id])
+    sauna.destroy
+  end
+
   private
 
   def mysauna_params
