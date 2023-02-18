@@ -24,14 +24,14 @@
     <div class="items-sell-contents">
       <div class="items-sell-main">
         <h2 class="items-sell-title">サウナの情報を入力</h2>
-        <%= form_with model: @sauna, url: posts_path, method: :post do |form| %>
+        <%= form_with(model: @saunas, local: true) do |form| %>
         <div>
           <%= form.label :title %>
-          <%= form.text_field :title %>
+          <%= form.text_field :title, placeholder: "店名" %>
         </div>
         <div>
           <%= form.label :address %>
-          <%= form.text_field :address %>
+          <%= form.text_field :address, placeholder: "住所" %>
         </div>
         <div>
           <%= form.label :prefecture_id %>
@@ -47,14 +47,14 @@
         </div>
         <div>
           <%= form.label :price %>
-          <%= form.number_field :price %>
+          <%= form.number_field :price , placeholder: "価格" %>
         </div>
         <div>
           <%= form.label :review %>
-          <%= form.text_area :review %>
+          <%= form.text_area :review, placeholder: "レビュー" %>
         </div>
         <div>
-          <%= form.submit %>
+          <%= form.submit "SEND" %>
         </div>
       <% end %>
-        <%= render 'shared/error_messages', model: f.object %>
+        <%#= render 'shared/error_messages', model: f.object %>
