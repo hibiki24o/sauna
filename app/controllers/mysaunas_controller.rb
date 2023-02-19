@@ -1,5 +1,5 @@
 class MysaunasController < ApplicationController
-  before_action :set_sauna, only: [:edit, :show]
+  before_action :set_sauna, only: [:edit, :show, :destroy, :update]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -12,7 +12,12 @@ class MysaunasController < ApplicationController
 
 
   def create
-    Mysauna.create(mysauna_params)
+    @sauna = Mysauna.new(mysauna_params)
+    if @sauna.save
+      redirect_to  mysaunas_path
+      else
+      render :new
+      end
   end
 
   def destroy
@@ -35,7 +40,7 @@ class MysaunasController < ApplicationController
   private
 
   def mysauna_params
-    params.require(:saunas).permit(:title, :address, :prefecture_id, :customer_id, :star_id, :price, :review)
+    params.require(:mysauna).permit(:title, :address, :prefecture_id, :customer_id, :star_id, :price, :review)
   end
 
   def set_sauna

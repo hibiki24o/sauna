@@ -24,7 +24,7 @@
     <div class="items-sell-contents">
       <div class="items-sell-main">
         <h2 class="items-sell-title">サウナの情報を入力</h2>
-        <%= form_with(model: @saunas, local: true) do |form| %>
+        <%= form_with model: @saunas  do |form| %>
         <div>
           <%= form.label :title %>
           <%= form.text_field :title, placeholder: "店名" %>
@@ -53,6 +53,7 @@
           <%= form.label :review %>
           <%= form.text_area :review, placeholder: "レビュー" %>
         </div>
+
         <div>
           <%= form.submit "SEND" %>
         </div>

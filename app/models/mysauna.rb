@@ -6,4 +6,9 @@ class Mysauna < ApplicationRecord
   validates :star_id        , presence: true
   validates :price          , presence: true
   validates :review         , presence: true
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :customer
+  belongs_to :star
+  belongs_to :prefecture
 end
