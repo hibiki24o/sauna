@@ -23,7 +23,7 @@
 
 
 <%# 商品の概要 %>
-<div class="item-show">
+<div class="sauna-show">
   <div class="item-box">
     <h2 class="name">
       <%= @sauna.title %>
@@ -34,10 +34,10 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-      <%= @product.price %>
+      <%= @sauna.price %>
       </span>
       <span class="item-postage">
-        <%= @product.delivery_charge.name %>
+        <%= @sauna.delivery_charge.name %>
       </span>
     </div>
 
@@ -54,37 +54,37 @@
     
 
     <div class="item-explain-box">
-      <span><%= @product.explanation %></span>
+      <span><%= @sauna.explanation %></span>
     </div>
     <table class="detail-table">
       <tbody>
         <tr>
           <th class="detail-item">店名</th>
-          <td class="detail-value"><%= @product.user.nickname %></td>
+          <td class="detail-value"><%= @sauna.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">都道府県</th>
-          <td class="detail-value"><%= @product.category.name %></td>
+          <td class="detail-value"><%= @sauna.category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">住所</th>
-          <td class="detail-value"><%= @product.status.name %></td>
+          <td class="detail-value"><%= @sauna.status.name %></td>
         </tr>
         <tr>
           <th class="detail-item">料金</th>
-          <td class="detail-value"><%= @product.delivery_charge.name %></td>
+          <td class="detail-value"><%= @sauna.delivery_charge.name %></td>
         </tr>
         <tr>
           <th class="detail-item">客層</th>
-          <td class="detail-value"><%= @product.prefecture.name %></td>
+          <td class="detail-value"><%= @sauna.prefecture.name %></td>
         </tr>
         <tr>
          <th class="detail-item">オススメ度</th>
-         <td class="detail-value"><%= @product.scheduled_day.name %></td>
+         <td class="detail-value"><%= @sauna.scheduled_day.name %></td>
         </tr>
         <tr>
           <th class="detail-item">レビュー</th>
-          <td class="detail-value"><%= @product.scheduled_day.name %></td>
+          <td class="detail-value"><%= @sauna.scheduled_day.name %></td>
         </tr>
       </tbody>
     </table>
