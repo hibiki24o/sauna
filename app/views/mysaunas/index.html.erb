@@ -34,7 +34,7 @@
            <li class='list'>
            <%= link_to mysauna_path(sauna.id) do %>
            <div class='item-img-content'>
-           <%= image_tag mysaunas.image, class: 'message-image' if mysaunas.image.attached? %>
+           <%= image_tag @saunas.image, class: 'message-image' if @saunas.image.attached? %>
          </div>
          <div class='item-info'>
            <h3 class='item-name'>
