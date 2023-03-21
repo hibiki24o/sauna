@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sauna</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>SAUNA</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%# <footer>
-      <a href="#" class="post-link">
-        <div class="post-link-img">
-         <img src="./assets/icon_camera.png" width="54" height="50">
-        </div>
-        <p class="post-link-text">投稿する</p>
-      </a>
-   </footer> %>
+  <div>
+          <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+   </footer>
     <%= yield %>
-    <%# <footer>
-      <p>
-        Copyright Sauna 2023.
-      </p>
-    </footer> %>
   </body>
+
 </html>

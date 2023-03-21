@@ -1,23 +1,4 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>SAUNA</title>
-  </head>
-  <body>
-    <header>
-      <div class="heading">
-        <h1 class="title">SAUNA</h1>
-      </div>
-      <div class="navbar">
-        <ul class="nav-lists">
-          <li>新規登録</li>
-          <li>ログイン</li>
-          <li>ログアウト</li>
-        </ul>
-      </div>
-    </header>
+<%= render "shared/header" %>
 
     <div class="contents">
       <div class="first-view">
@@ -28,27 +9,29 @@
       </div>
  
         <!-- 『新着サウナ情報』を表示する 店名・画像・場所・投稿者名 -->
-    <ul class='item-lists'>
         <h3 class="heading-name">みんなのサウナ広場</h3>
+        <ul class='item-lists'>
           <% @saunas.each do |sauna| %>
-           <li class='list'>
-           <%= link_to mysauna_path(sauna.id) do %>
-           <div class='item-img-content'>
-           <%= image_tag @saunas.image, class: 'message-image' if @saunas.image.attached? %>
-         </div>
-         <div class='item-info'>
-           <h3 class='item-name'>
-            <%= sauna.title %>
-           </h3>
-          <div class='item-prefecture'>
-            <%= sauna.prefecture_id %>
-          </div>
-          <div class='item-star'>
-            <%= sauna.star_id %>
-          </div>
-        </div>
+            <li class='list'>
+              <%= link_to mysauna_path(sauna.id) do %>
+                <div class='item-img-content'>
+                  <%= image_tag sauna.image, class: "item-img" %>
+                </div>
+                <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= @sauna.title %>
+                  </h3>
+                  <div class='item-prefecture'>
+                    <%= @sauna.prefecture.name %>
+                  </div>
+                  <div class='item-star'>
+                    <%= @sauna.star.name %>
+                  </div>
+                </div>
+              <% end %>
+            </li>
           <% end %>
-        <% end %>
+        </ul>
 
       <%= link_to( new_mysauna_path, class: "post-link") do %>
         <div class="post-link-img">
@@ -56,3 +39,5 @@
         </div>
         <p class="post-link-text">投稿する</p>
       <% end %>
+
+

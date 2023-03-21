@@ -1,0 +1,27 @@
+.sauna-main {
+  height: 100vh; /* ウィンドウの高さいっぱいに表示 */
+}
+
+.sauna-main-title {
+  text-align: center;
+  padding: 20px 0px 30px;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+  background: #bda8a8;
+  padding: 10px 0px;
+}
+
+.img-upload {
+  margin: 50px;
+}
+
+.new-sauna {
+  margin: 50px;
+}
+
+input {
+  text-align: center;
+}
