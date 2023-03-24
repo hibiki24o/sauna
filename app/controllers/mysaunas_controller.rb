@@ -7,14 +7,14 @@ class MysaunasController < ApplicationController
   end
 
   def new
-    @sauna = Mysauna.new
+    @saunas = Mysauna.new
   end
 
 
   def create
-    @sauna = Mysauna.new(mysauna_params)
-    if @sauna.save
-      redirect_to  root_path
+    @mysauna = Mysauna.new(mysauna_params)
+    if @mysauna.save
+      redirect_to mysaunas_path
       else
       render :new
       end
@@ -38,9 +38,9 @@ class MysaunasController < ApplicationController
 
 
   private
-  
+
   def mysauna_params
-    params.require(:mysauna).permit(:image,:title, :address, :prefecture_id, :customer_id, :star_id, :price, :review)
+    params.require(:mysauna).permit(:image, :title, :address, :prefecture_id, :customer_id, :star_id, :price, :review).merge(user_id: current_user.id)
   end
 
   def set_sauna

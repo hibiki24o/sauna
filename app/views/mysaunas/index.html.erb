@@ -19,13 +19,13 @@
                 </div>
                 <div class='item-info'>
                   <h3 class='item-name'>
-                    <%= @sauna.title %>
+                    <%= sauna.title %>
                   </h3>
                   <div class='item-prefecture'>
-                    <%= @sauna.prefecture.name %>
+                    <%= sauna.prefecture.name %>
                   </div>
                   <div class='item-star'>
-                    <%= @sauna.star.name %>
+                    <%= sauna.star.name %>
                   </div>
                 </div>
               <% end %>
@@ -41,3 +41,4 @@
       <% end %>
 
 
+<%= render "shared/footer" %>

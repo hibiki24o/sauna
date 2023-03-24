@@ -25,3 +25,37 @@ form {
 input {
   text-align: center;
 }
+
+.sauna-text {
+  width: 100%;
+}
+
+
+.select-box {
+  margin-left: 60px;
+}
+
+.select-box1 {
+  margin-left: 85px;
+}
+
+.select-box2 {
+  margin-left: 45px;
+}
+
+.price-box {
+  margin-left: 29px;
+}
+
+.adress-box {
+  margin-left: 30px;
+}
+
+.sauna-review .review-box {
+  height: 20px; /* 適切な高さに変更してください */
+  width: 100%;
+}
+
+.send {
+  margin-left: 115px;
+}

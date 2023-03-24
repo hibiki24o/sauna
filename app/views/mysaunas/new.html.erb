@@ -3,7 +3,7 @@
  
  <div class="sauna-main">
     <h2 class="sauna-main-title">商品の情報を入力</h2>
-    <%= form_with model: @sauna, url: mysaunas_path, method: :post, local: true do |f| %>
+    <%= form_with model: @mysauna, url: mysaunas_path, method: :post, local: true, scope: :mysauna do |f| %>
 <%# 店舗画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -24,7 +24,7 @@
         店舗名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"sauna-text", id:"sauna-name" %>
+      <%= f.text_area :title , class:"sauna-text", id:"sauna-name" %>
 
       <div class="sauna-prefecture">
          都道府県名
@@ -34,31 +34,32 @@
 
       <div class="sauna-prefecture">
          住所
-        <%= f.text_field :address, placeholder: "住所" %>
+        <%= f.text_field :address, placeholder: "住所" , class:"adress-box" %>
       </div>
 
       <div class="sauna-customer">
           客層
-          <%= f.collection_select(:customer_id, Customer.all, :id, :name, {}, {class:"select-box", id:"item-customer"}) %>
+          <%= f.collection_select(:customer_id, Customer.all, :id, :name, {}, {class:"select-box1", id:"item-customer"}) %>
       </div>
 
       <div class="sauna-star">
           オススメ度
-          <%= f.collection_select(:star_id, Star.all, :id, :name, {}, {class:"select-box", id:"star-prefecture"}) %>
+          <%= f.collection_select(:star_id, Star.all, :id, :name, {}, {class:"select-box2", id:"star-prefecture"}) %>
       </div>
 
       <div class="sauna-price">
           料金
-          <%= f.text_field :price, placeholder: "料金" %>
+          <%= f.text_field :price, placeholder: "料金" , class:"price-box" %>
       </div>
 
       <div class="sauna-review">
-          <%= f.text_field :review, placeholder: "レビュー" %>
+          <%= f.text_field :review, placeholder: "レビュー" , class: "review-box" %>
       </div>
 
-        <div>
+        <div class="send">
           <%= f.submit "SEND" %>
         </div>
       <% end %>
     </div>
 
+<%= render "shared/footer" %>

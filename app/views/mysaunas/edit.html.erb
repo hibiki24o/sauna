@@ -1,27 +1,4 @@
-<!DOCTYPE HTML>
-
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>SAUNA</title>
-  </head>
-  <body>
-    <header>
-      <div class="heading">
-        <h1 class="title">SAUNA</h1>
-      </div>
-      <div class="navbar">
-        <ul class="nav-lists">
-          <li>新規登録</li>
-          <li>ログイン</li>
-          <li>ログアウト</li>
-        </ul>
-      </div>
-    </header>
-</html>
-
+<%= render "shared/header" %>
         <h2 class="items-sell-title">投稿の編集を入力</h2>
         <%= form_with(model: @saunas, local: true) do |form| %>
         <div>
@@ -56,3 +33,5 @@
           <%= form.submit "SEND" %>
         </div>
       <% end %>
+
+<%= render "shared/footer" %>
