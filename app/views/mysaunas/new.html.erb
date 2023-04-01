@@ -1,60 +1,65 @@
-<!DOCTYPE HTML>
+<%= render "shared/header" %>
 
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>SAUNA</title>
-  </head>
-  <body>
-    <header>
-      <div class="heading">
-        <h1 class="title">SAUNA</h1>
+ 
+ <div class="sauna-main">
+    <h2 class="sauna-main-title">サウナの情報を入力</h2>
+    <%= form_with model: @mysauna, url: mysaunas_path, method: :post, local: true, scope: :mysauna do |f| %>
+<%# 店舗画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        店舗画像
+        <span class="indispensable">必須</span>
       </div>
-      <div class="navbar">
-        <ul class="nav-lists">
-          <li>新規登録</li>
-          <li>ログイン</li>
-          <li>ログアウト</li>
-        </ul>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
-    </header>
+    </div>
+<%# /店舗画像 %>
 
-    <div class="items-sell-contents">
-      <div class="items-sell-main">
-        <h2 class="items-sell-title">サウナの情報を入力</h2>
-        <%= form_with(model: @saunas, local: true) do |form| %>
-        <div>
-          <%= form.label :title %>
-          <%= form.text_field :title, placeholder: "店名" %>
+    <div class="new-sauna">
+      <div class="weight-bold-text">
+        店舗名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title , class:"sauna-text", id:"sauna-name" %>
+
+      <div class="sauna-prefecture">
+         都道府県名
+         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) if defined?(Prefecture) %>
+ 
         </div>
-        <div>
-          <%= form.label :address %>
-          <%= form.text_field :address, placeholder: "住所" %>
-        </div>
-        <div>
-          <%= form.label :prefecture_id %>
-          <%= form.number_field :prefecture_id %>
-        </div>
-        <div>
-          <%= form.label :customer_id %>
-          <%= form.number_field :customer_id %>
-        </div>
-        <div>
-          <%= form.label :star_id %>
-          <%= form.number_field :star_id %>
-        </div>
-        <div>
-          <%= form.label :price %>
-          <%= form.number_field :price , placeholder: "価格" %>
-        </div>
-        <div>
-          <%= form.label :review %>
-          <%= form.text_area :review, placeholder: "レビュー" %>
-        </div>
-        <div>
-          <%= form.submit "SEND" %>
+
+      <div class="sauna-prefecture">
+         住所
+        <%= f.text_field :address, placeholder: "住所" , class:"adress-box" %>
+      </div>
+
+      <div class="sauna-customer">
+          客層
+          <%= f.collection_select(:customer_id, Customer.all, :id, :name, {}, {class:"select-box1", id:"item-customer"}) %>
+      </div>
+
+      <div class="sauna-star">
+          オススメ度
+          <%= f.collection_select(:star_id, Star.all, :id, :name, {}, {class:"select-box2", id:"star-prefecture"}) %>
+      </div>
+
+      <div class="sauna-price">
+          料金
+          <%= f.text_field :price, placeholder: "料金" , class:"price-box" %>
+      </div>
+
+      <div class="sauna-review">
+          <%= f.text_field :review, placeholder: "レビュー" , class: "review-box" %>
+      </div>
+
+        <div class="send">
+          <%= f.submit "SEND" %>
         </div>
       <% end %>
-        <%#= render 'shared/error_messages', model: @saunas.object %>
+    </div>
+
+<%= render "shared/footer" %>

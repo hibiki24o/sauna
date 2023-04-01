@@ -1,0 +1,65 @@
+.sauna-main {
+  height: 100vh; /* ウィンドウの高さいっぱいに表示 */
+}
+
+.sauna-main-title {
+  text-align: center;
+  padding: 20px 0px 30px;
+}
+
+form {
+  width: 400px;
+  margin: 0 auto;
+  background: #bda8a8;
+  padding: 10px 0px;
+}
+
+.img-upload {
+  margin: 50px;
+}
+
+.new-sauna {
+  margin: 50px;
+}
+
+input {
+  text-align: center;
+}
+
+.sauna-text {
+  width: 100%;
+}
+
+
+.select-box {
+  margin-left: 60px;
+}
+
+.select-box1 {
+  margin-left: 85px;
+}
+
+.select-box2 {
+  margin-left: 45px;
+}
+
+.price-box {
+  margin-left: 29px;
+}
+
+.adress-box {
+  margin-left: 30px;
+}
+
+.sauna-review .review-box {
+  height: 20px; /* 適切な高さに変更してください */
+  width: 100%;
+}
+
+.send {
+  margin-left: 115px;
+}
+
+.container1 {
+  padding: 130px 0px 280px;
+}
