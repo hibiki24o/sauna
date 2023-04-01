@@ -10,9 +10,9 @@
       <%= image_tag @sauna.image ,class:"item-box-img" %> 
     </div>
    <% if user_signed_in? && current_user.id == @sauna.user_id %>
-    <%= link_to "投稿の編集", "#", method: :get, class: "item-red-btn" %>
+    <%= link_to "投稿の編集",  edit_mysauna_path , method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+    <%= link_to "削除", mysauna_path, method: :delete, class:"item-destroy" %>
    <% end %>
     
     <table class="detail-table">

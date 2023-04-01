@@ -1,4 +1,5 @@
 class MysaunasController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   before_action :set_sauna, only: [:edit, :show, :destroy, :update]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -21,19 +22,26 @@ class MysaunasController < ApplicationController
   end
 
   def destroy
-    @sauna = Mysauna.find(params[:id])
-    @sauna.destroy
+    if current_user.id == @sauna.user_id
+      @sauna.destroy
+      redirect_to  root_path
+      end
   end
 
   def show
   end
 
   def edit
+    @sauna = Mysauna.find(params[:id])
   end
 
   def update
     @sauna = Mysauna.find(params[:id])
-    @sauna.update(mysauna_params)
+    if @sauna.update(mysauna_params)
+      redirect_to mysauna_path
+    else
+      render action: :edit
+    end
   end
 
 
